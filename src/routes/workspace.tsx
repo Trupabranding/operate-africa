@@ -1,0 +1,2 @@
+import { createFileRoute } from "@tanstack/react-router"; import { WorkspaceOverview } from "../components/product-pages";
+export const Route = createFileRoute("/workspace")({ component: WorkspaceOverview });
