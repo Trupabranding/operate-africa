@@ -1,0 +1,2 @@
+import { createFileRoute } from "@tanstack/react-router"; import { MarketplacePage } from "../components/product-pages";
+export const Route = createFileRoute("/marketplace")({ head:()=>({meta:[{title:"Marketplace — Workspaces"},{name:"description",content:"Discover projects, teams, and opportunities across Africa."}]}), component: MarketplacePage });

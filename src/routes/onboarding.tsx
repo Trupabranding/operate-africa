@@ -1,0 +1,2 @@
+import { createFileRoute } from "@tanstack/react-router"; import { SelectionScreen } from "../components/selection-screen";
+export const Route = createFileRoute("/onboarding")({ component:()=> <SelectionScreen variant="intent"/> });

@@ -9,13 +9,88 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorkspacesRouteImport } from './routes/workspaces'
+import { Route as WorkspaceOpportunitiesRouteImport } from './routes/workspace-opportunities'
+import { Route as WorkspaceRouteImport } from './routes/workspace'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as MembersRouteImport } from './routes/members'
+import { Route as MarketplaceRouteImport } from './routes/marketplace'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as HomeRouteImport } from './routes/home'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DirectoryRouteImport } from './routes/directory'
+import { Route as BoardsRouteImport } from './routes/boards'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkspaceCreateRouteImport } from './routes/workspace.create'
+import { Route as OpportunityOpportunityIdRouteImport } from './routes/opportunity.$opportunityId'
 
+const WorkspacesRoute = WorkspacesRouteImport.update({
+  id: '/workspaces',
+  path: '/workspaces',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkspaceOpportunitiesRoute = WorkspaceOpportunitiesRouteImport.update({
+  id: '/workspace-opportunities',
+  path: '/workspace-opportunities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkspaceRoute = WorkspaceRouteImport.update({
+  id: '/workspace',
+  path: '/workspace',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembersRoute = MembersRouteImport.update({
+  id: '/members',
+  path: '/members',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketplaceRoute = MarketplaceRouteImport.update({
+  id: '/marketplace',
+  path: '/marketplace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DirectoryRoute = DirectoryRouteImport.update({
@@ -23,49 +98,263 @@ const DirectoryRoute = DirectoryRouteImport.update({
   path: '/directory',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BoardsRoute = BoardsRouteImport.update({
+  id: '/boards',
+  path: '/boards',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkspaceCreateRoute = WorkspaceCreateRouteImport.update({
+  id: '/create',
+  path: '/create',
+  getParentRoute: () => WorkspaceRoute,
+} as any)
+const OpportunityOpportunityIdRoute =
+  OpportunityOpportunityIdRouteImport.update({
+    id: '/opportunity/$opportunityId',
+    path: '/opportunity/$opportunityId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/boards': typeof BoardsRoute
   '/directory': typeof DirectoryRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/marketplace': typeof MarketplaceRoute
+  '/members': typeof MembersRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/workspace': typeof WorkspaceRouteWithChildren
+  '/workspace-opportunities': typeof WorkspaceOpportunitiesRoute
+  '/workspaces': typeof WorkspacesRoute
+  '/opportunity/$opportunityId': typeof OpportunityOpportunityIdRoute
+  '/workspace/create': typeof WorkspaceCreateRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/boards': typeof BoardsRoute
   '/directory': typeof DirectoryRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/marketplace': typeof MarketplaceRoute
+  '/members': typeof MembersRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/workspace': typeof WorkspaceRouteWithChildren
+  '/workspace-opportunities': typeof WorkspaceOpportunitiesRoute
+  '/workspaces': typeof WorkspacesRoute
+  '/opportunity/$opportunityId': typeof OpportunityOpportunityIdRoute
+  '/workspace/create': typeof WorkspaceCreateRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/boards': typeof BoardsRoute
   '/directory': typeof DirectoryRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/marketplace': typeof MarketplaceRoute
+  '/members': typeof MembersRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/workspace': typeof WorkspaceRouteWithChildren
+  '/workspace-opportunities': typeof WorkspaceOpportunitiesRoute
+  '/workspaces': typeof WorkspacesRoute
+  '/opportunity/$opportunityId': typeof OpportunityOpportunityIdRoute
+  '/workspace/create': typeof WorkspaceCreateRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/directory' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/boards'
+    | '/directory'
+    | '/forgot-password'
+    | '/home'
+    | '/login'
+    | '/marketplace'
+    | '/members'
+    | '/onboarding'
+    | '/profile'
+    | '/register'
+    | '/settings'
+    | '/sitemap.xml'
+    | '/workspace'
+    | '/workspace-opportunities'
+    | '/workspaces'
+    | '/opportunity/$opportunityId'
+    | '/workspace/create'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/directory' | '/sitemap.xml'
-  id: '__root__' | '/' | '/directory' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/boards'
+    | '/directory'
+    | '/forgot-password'
+    | '/home'
+    | '/login'
+    | '/marketplace'
+    | '/members'
+    | '/onboarding'
+    | '/profile'
+    | '/register'
+    | '/settings'
+    | '/sitemap.xml'
+    | '/workspace'
+    | '/workspace-opportunities'
+    | '/workspaces'
+    | '/opportunity/$opportunityId'
+    | '/workspace/create'
+  id:
+    | '__root__'
+    | '/'
+    | '/boards'
+    | '/directory'
+    | '/forgot-password'
+    | '/home'
+    | '/login'
+    | '/marketplace'
+    | '/members'
+    | '/onboarding'
+    | '/profile'
+    | '/register'
+    | '/settings'
+    | '/sitemap.xml'
+    | '/workspace'
+    | '/workspace-opportunities'
+    | '/workspaces'
+    | '/opportunity/$opportunityId'
+    | '/workspace/create'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BoardsRoute: typeof BoardsRoute
   DirectoryRoute: typeof DirectoryRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  HomeRoute: typeof HomeRoute
+  LoginRoute: typeof LoginRoute
+  MarketplaceRoute: typeof MarketplaceRoute
+  MembersRoute: typeof MembersRoute
+  OnboardingRoute: typeof OnboardingRoute
+  ProfileRoute: typeof ProfileRoute
+  RegisterRoute: typeof RegisterRoute
+  SettingsRoute: typeof SettingsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  WorkspaceRoute: typeof WorkspaceRouteWithChildren
+  WorkspaceOpportunitiesRoute: typeof WorkspaceOpportunitiesRoute
+  WorkspacesRoute: typeof WorkspacesRoute
+  OpportunityOpportunityIdRoute: typeof OpportunityOpportunityIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/workspaces': {
+      id: '/workspaces'
+      path: '/workspaces'
+      fullPath: '/workspaces'
+      preLoaderRoute: typeof WorkspacesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workspace-opportunities': {
+      id: '/workspace-opportunities'
+      path: '/workspace-opportunities'
+      fullPath: '/workspace-opportunities'
+      preLoaderRoute: typeof WorkspaceOpportunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workspace': {
+      id: '/workspace'
+      path: '/workspace'
+      fullPath: '/workspace'
+      preLoaderRoute: typeof WorkspaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/members': {
+      id: '/members'
+      path: '/members'
+      fullPath: '/members'
+      preLoaderRoute: typeof MembersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marketplace': {
+      id: '/marketplace'
+      path: '/marketplace'
+      fullPath: '/marketplace'
+      preLoaderRoute: typeof MarketplaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/directory': {
@@ -75,6 +364,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DirectoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/boards': {
+      id: '/boards'
+      path: '/boards'
+      fullPath: '/boards'
+      preLoaderRoute: typeof BoardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -82,24 +378,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/workspace/create': {
+      id: '/workspace/create'
+      path: '/create'
+      fullPath: '/workspace/create'
+      preLoaderRoute: typeof WorkspaceCreateRouteImport
+      parentRoute: typeof WorkspaceRoute
+    }
+    '/opportunity/$opportunityId': {
+      id: '/opportunity/$opportunityId'
+      path: '/opportunity/$opportunityId'
+      fullPath: '/opportunity/$opportunityId'
+      preLoaderRoute: typeof OpportunityOpportunityIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface WorkspaceRouteChildren {
+  WorkspaceCreateRoute: typeof WorkspaceCreateRoute
+}
+
+const WorkspaceRouteChildren: WorkspaceRouteChildren = {
+  WorkspaceCreateRoute: WorkspaceCreateRoute,
+}
+
+const WorkspaceRouteWithChildren = WorkspaceRoute._addFileChildren(
+  WorkspaceRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BoardsRoute: BoardsRoute,
   DirectoryRoute: DirectoryRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  HomeRoute: HomeRoute,
+  LoginRoute: LoginRoute,
+  MarketplaceRoute: MarketplaceRoute,
+  MembersRoute: MembersRoute,
+  OnboardingRoute: OnboardingRoute,
+  ProfileRoute: ProfileRoute,
+  RegisterRoute: RegisterRoute,
+  SettingsRoute: SettingsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  WorkspaceRoute: WorkspaceRouteWithChildren,
+  WorkspaceOpportunitiesRoute: WorkspaceOpportunitiesRoute,
+  WorkspacesRoute: WorkspacesRoute,
+  OpportunityOpportunityIdRoute: OpportunityOpportunityIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
