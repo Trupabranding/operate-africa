@@ -6,18 +6,18 @@ import {
 import { useState, type ReactNode } from "react";
 
 const primary = [
-  { label: "Home", to: "/home", icon: Home },
-  { label: "Workspaces", to: "/workspaces", icon: Blocks },
+  { label: "My Office", to: "/home", icon: Home },
+  { label: "My Offices", to: "/workspaces", icon: Blocks },
   { label: "Marketplace", to: "/marketplace", icon: BriefcaseBusiness },
-  { label: "Profile", to: "/profile", icon: CircleUserRound },
+  { label: "Talent Network", to: "/directory", icon: Users },
   { label: "Settings", to: "/settings", icon: Settings },
 ] as const;
 
 const workspace = [
   { label: "Overview", to: "/workspace", icon: LayoutDashboard },
-  { label: "Boards", to: "/boards", icon: Blocks },
+  { label: "Activities", to: "/boards", icon: Blocks },
   { label: "Opportunities", to: "/workspace-opportunities", icon: BriefcaseBusiness },
-  { label: "Members", to: "/members", icon: Users },
+  { label: "Team", to: "/members", icon: Users },
 ] as const;
 
 export function Mark({ compact = false }: { compact?: boolean }) {
