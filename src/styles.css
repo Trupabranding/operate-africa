@@ -26,8 +26,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --color-info: var(--info);
+  --font-display: "Manrope", system-ui, sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
 }
 
 :root {
@@ -37,7 +38,7 @@
   --foreground: oklch(0.18 0.02 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0.02 260);
-  --primary: oklch(0.45 0.09 162);                 /* Deep Emerald #065F46 */
+  --primary: oklch(0.59 0.14 163);                 /* Emerald #059669 */
   --primary-foreground: oklch(0.99 0 0);
   --primary-soft: oklch(0.96 0.03 162);
   --secondary: oklch(0.21 0.02 260);               /* Charcoal #111827 */
@@ -50,6 +51,7 @@
   --input: oklch(0.92 0.008 255);
   --ring: oklch(0.45 0.09 162);
   --destructive: oklch(0.577 0.245 27);
+  --info: oklch(0.68 0.12 240);
 }
 
 @layer base {
@@ -59,6 +61,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.03em; }
 }
