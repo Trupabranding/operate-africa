@@ -72,10 +72,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const SITE_TITLE =
-  "Workspaces Africa — The Operating System for African Organizations";
+const SITE_TITLE = "Workspaces Africa — Your Digital Office";
 const SITE_DESCRIPTION =
-  "Workspaces Africa brings projects, CRM, documents, teams and public organization profiles into one platform built for African SMEs, NGOs, agencies, churches and startups.";
+  "Build ideas, assemble teams, discover opportunities, and make execution visible in one calm digital office for modern African organizations.";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -92,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: SITE_TITLE },
       { name: "twitter:description", content: SITE_DESCRIPTION },
-      { name: "theme-color", content: "#065F46" },
+      { name: "theme-color", content: "#059669" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
